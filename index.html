@@ -164,7 +164,12 @@
 
        function updateDate(){
          var val = timestamp.val() + ''
-         var date = new Date(val.length == 13 ? +val : val)
+         var date = new Date(val && +val == val 
+         ? val.length == 13 
+            ? +val 
+            : val.length == 10 ? +val * 1000 : val
+        :val);
+
          if (!date.getTime()) {
            return
          }
