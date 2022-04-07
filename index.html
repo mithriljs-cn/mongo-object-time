@@ -174,6 +174,10 @@
 					hoursInput.val(date.getHours());
 					minutesInput.val(date.getMinutes());
 					secondsInput.val(date.getSeconds());
+         var objectId = objectIdFromDate(date);
+
+					objectIdInput.val(objectId);
+					objectIdForPasting.val('ObjectId("' + objectId + '")');
        } $('#timestamp').keyup(updateDate).change(updateDate);
 
 
